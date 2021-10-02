@@ -833,3 +833,140 @@ i.fa-angle-right {
     text-decoration: underline;
     color: yellow;
 }
+
+
+/*  https://www.youtube.com/watch?v=qta2QuYdMxk&ab_channel=OnlineTutorials */
+
+
+/* Html CSS Animation Effects | Animated Scene using FontAweosme
+ */
+
+.street {
+    width: 300px;
+    height: 200px;
+    background: #ddd;
+    display: block;
+    margin: 100px auto;
+    box-shadow: -7px -1px 46px #ffd700bf;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.street .sun {
+    position: absolute;
+    top: 17px;
+    left: 81%;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    /* idea */
+    box-shadow: 0 0 40px gold, 0 0 50px gold, 0 0 60px gold, 0 0 80px gold;
+}
+
+.street .road {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background: #333;
+    bottom: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.street .road::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: green;
+    height: 16px;
+    bottom: 100%;
+    left: 0;
+}
+
+.street .road::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 8px;
+    background: repeating-linear-gradient( 90deg, transparent 0, transparent 50%, #fff 50%, #fff 100%);
+    bottom: 50%;
+    left: 0;
+    background-size: 20%;
+    animation: road-animation 0.2s linear infinite;
+    -webkit-animation: road-animation 0.2s linear infinite;
+}
+
+@keyframes road-animation {
+    0% {
+        background-position: 0%;
+    }
+    /* 50% {
+        background-position: 50%;
+    } */
+    100% {
+        background-position: -20%;
+    }
+}
+
+
+/* van */
+
+.van-icon {
+    font-size: 3em;
+    position: absolute;
+    bottom: 19%;
+    color: white;
+    left: 2%;
+    -webkit-text-stroke: 2px black;
+    animation: van-animation 0.5s linear infinite;
+    -webkit-animation: van-animation 0.5s linear infinite;
+}
+
+@keyframes van-animation {
+    0%,
+    100% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(2px);
+        -webkit-transform: translateY(2px);
+        -moz-transform: translateY(2px);
+        -ms-transform: translateY(2px);
+        -o-transform: translateY(2px);
+    }
+}
+
+
+/* cloud */
+
+.cloud-icon {
+    color: #fff;
+    position: absolute;
+    top: calc(10% * var(--i));
+    left: calc(30% * var(--i));
+    animation: cloud-anim 3.5s linear infinite normal;
+    animation-delay: calc(-2s*var(--i));
+    -webkit-animation: cloud-anim 3.5s linear infinite normal;
+}
+
+@keyframes cloud-anim {
+    0% {
+        transform: translateX(300px);
+        -webkit-transform: translateX(300px);
+        -moz-transform: translateX(300px);
+        -ms-transform: translateX(300px);
+        -o-transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(-300px);
+        -webkit-transform: translateX(-300px);
+        -moz-transform: translateX(-300px);
+        -ms-transform: translateX(-300px);
+        -o-transform: translateX(-300px);
+    }
+}
